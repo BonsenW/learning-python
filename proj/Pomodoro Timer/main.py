@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
 import datetime
-import winsound
 
 COLOURS = {
     "PINK" : "#e2979c",
@@ -117,9 +116,6 @@ class App(tk.Tk):
             self.timer = self.after(1000, self.count_down, count - 1)
         else:
             self.start_timer()
-
-
-
 
 if __name__ == "__main__":
     app = App()
