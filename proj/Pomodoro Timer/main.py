@@ -6,6 +6,9 @@ import winsound
 import math
 
 class PomodoroApp(tk.Tk):
+    """ The Pomodoro Method works by splitting long tasks into 4 sections (named Pomodoros)
+        with a short break in between and a long break in between 4 Pomodoros.  """
+   
     def __init__(self):
         super().__init__()
         # Variables
@@ -48,6 +51,7 @@ class PomodoroApp(tk.Tk):
         self.canvas.grid(row=0, column=0)
         
     def start_timer(self):
+        """ Starts the Pomodoro Timer. Where each repetition (pomodoro) has different time lengths and effects to the canvas """
         self.repetition_number += 1
         work_sec = self.settings.get_times('work_min') * 60
         short_break_sec = self.settings.get_times('short_break_min') * 60
@@ -58,33 +62,37 @@ class PomodoroApp(tk.Tk):
             self.alternate_gui_colours()
             winsound.Beep(5000, 1000)
             self.change_start_text("Break Time! ")
-            self.after(3000, self.change_start_text, f"Press Space To Reset! ")
+            self.t2 = self.after(3000, self.change_start_text, f"Press Space To Reset! ")
             self.count_down(long_break_sec)
         elif self.repetition_number%2 == 0:
             # Short break
             self.alternate_gui_colours()
             winsound.Beep(5000, 1000)
             self.change_start_text("Break Time! ")
-            self.after(3000, self.change_start_text, f"Press Space To Reset! ")
+            self.t1 = self.after(3000, self.change_start_text, f"Press Space To Reset! ")
             self.count_down(short_break_sec)
         else:
             # Work
             self.change_start_text("Work Time! ")
             winsound.Beep(2500, 500)
-            self.after(3000, self.change_start_text, f"{math.ceil((8 - self.repetition_number)/2)} Pomodoros Left! ")
-            self.after(6000, self.change_start_text, f"Press Space To Reset! ")
+            self.t1 = self.after(3000, self.change_start_text, f"{math.ceil((8 - self.repetition_number)/2)} Pomodoros Left! ")
+            self.t2 = self.after(6000, self.change_start_text, f"Press Space To Reset! ")
             self.alternate_gui_colours()
             self.count_down(work_sec)
     
     def reset_timer(self):
+        """ Resets the timer to its initial state """
         self.repetition_number = 0
         self.timer_started = False
         self.after_cancel(self.timer)
-        self.change_gui_colour(bg_colour = self.settings.BG_COLOUR_BLUE, halo_img_path = self.settings.BLUE_HALO_IMAGE_PATH)
+        self.after_cancel(self.t1)
+        self.after_cancel(self.t2)
+        self.change_gui_aesthetics(bg_colour = self.settings.BG_COLOUR_BLUE, halo_img_path = self.settings.BLUE_HALO_IMAGE_PATH)
         self.change_timer_text("TIMER")
         self.change_start_text("PRESS SPACE TO START TIMER")
          
-    def count_down(self, count):
+    def count_down(self, count: int):
+        """ Recursively counts down from var count (int) and displays the current time to the canvas """
         new_time = str(datetime.timedelta(seconds=count))[2::]
         self.change_timer_text(new_time)
         if count >= 0:
@@ -93,6 +101,7 @@ class PomodoroApp(tk.Tk):
             self.start_timer()
 
     def open_settings(self):
+        """ Opens a new window used for setting configurations """
         newWindow = tk.Toplevel(master=self, bg=self.settings.BG_COLOUR_BLUE)
         newWindow.title("Pomodoro Timer Settings")
         tk.Label(master=newWindow, text="Work Minutes").grid(column=0, row=0, padx=5, pady=5)
@@ -106,23 +115,33 @@ class PomodoroApp(tk.Tk):
         long_break_min_entry.grid(column=0, row=5, padx=5, pady=5)
         
         def change_time_settings():
+            """ Changes the time using entry widgets """
             try:
                 self.settings.change_times('work_min', new_value=int(work_min_entry.get()))
                 self.settings.change_times('short_break_min', new_value=int(short_break_min_entry.get()))
                 self.settings.change_times('long_break_min', new_value=int(long_break_min_entry.get()))
-            except ValueError:
-                messagebox.showerror(title="VALUE ERROR!", message="Invalid Value")
+            except ValueError as e:
+                messagebox.showinfo(title="VALUE ERROR!", message="Valid values changed!")
+            newWindow.destroy()
         
         confirm_button = tk.Button(master=newWindow, text="Confirm", command=change_time_settings)
         confirm_button.grid(column=0, row=6, padx=5, pady=10)
         
-    def change_timer_text(self, new_text):
+    def change_timer_text(self, new_text: str):
+        """ Changes the text of the timer text widget to new_text (str) """
         self.canvas.itemconfig(self.timer_text, text=' '.join([i for i in new_text]))
     
     def change_start_text(self, new_text):
+        """ Changes the text of the start text widget to new_text (str) """
         self.canvas.itemconfig(self.start_text, text=' '.join([i for i in new_text]))
 
-    def change_gui_colour(self, bg_colour, halo_img_path):
+    def change_gui_aesthetics(self, bg_colour: str, halo_img_path: str):
+        """ Modifies the GUI aesthetics 
+        
+        Args:
+            bg_colour (str) : A hex-code for a new background colour.
+            halo_image_path (str) : An absolute path to a halo img
+        """
         center = (self.settings.SCREEN_WIDTH /2, self.settings.SCREEN_HEIGHT/2)
         self.canvas['bg'] = bg_colour
         self.cog_button['bg'] = bg_colour
@@ -130,13 +149,14 @@ class PomodoroApp(tk.Tk):
         self.canvas.create_image(center, image=self.halo_img)
         
     def alternate_gui_colours(self):
+        """ Alternates GUI colours from red to green """
         bg_red = self.settings.BG_COLOUR_RED
         bg_green = self.settings.BG_COLOUR_GREEN
         
         if self.canvas['bg'] == bg_red:
-            self.change_gui_colour(bg_colour=bg_green, halo_img_path=self.settings.GREEN_HALO_IMAGE_PATH)
+            self.change_gui_aesthetics(bg_colour=bg_green, halo_img_path=self.settings.GREEN_HALO_IMAGE_PATH)
         else:
-            self.change_gui_colour(bg_colour=bg_red, halo_img_path=self.settings.RED_HALO_IMAGE_PATH)
+            self.change_gui_aesthetics(bg_colour=bg_red, halo_img_path=self.settings.RED_HALO_IMAGE_PATH)
 
     def on_space_release(self, e):
         """ Starts the timer on space key release. """
