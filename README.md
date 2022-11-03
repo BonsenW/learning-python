@@ -15,5 +15,5 @@ A collection of beginner/intermediate python projects
 | 8 | Turtle Crossing | link | link |
 | 9 | America State Quiz | link | link |
 | 10 | Password Manager | link | link |
-| 11 | Pomodoro Timer | link | link |
+| 11 | [Pomodoro Timer](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Pomodoro%20Timer/README.md) |
 | 12 | Flashcard Project | link | link |
