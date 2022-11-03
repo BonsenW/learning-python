@@ -93,7 +93,7 @@ class PomodoroApp(tk.Tk):
          
     def count_down(self, count: int):
         """ Recursively counts down from var count (int) and displays the current time to the canvas """
-        new_time = str(datetime.timedelta(seconds=count))[2::]
+        new_time = str(datetime.timedelta(seconds=count))
         self.change_timer_text(new_time)
         if count >= 0:
             self.timer = self.after(1000, self.count_down, count - 1)
@@ -117,11 +117,11 @@ class PomodoroApp(tk.Tk):
         def change_time_settings():
             """ Changes the time using entry widgets """
             try:
-                self.settings.change_times('work_min', new_value=int(work_min_entry.get()))
-                self.settings.change_times('short_break_min', new_value=int(short_break_min_entry.get()))
-                self.settings.change_times('long_break_min', new_value=int(long_break_min_entry.get()))
+                self.settings.change_times('work_min', new_value=float(work_min_entry.get()))
+                self.settings.change_times('short_break_min', new_value=float(short_break_min_entry.get()))
+                self.settings.change_times('long_break_min', new_value=float(long_break_min_entry.get()))
             except ValueError as e:
-                messagebox.showinfo(title="VALUE ERROR!", message="Valid values changed!")
+                messagebox.showinfo(title="VALUE ERROR!", message="Valid values changed! Any Invalid Values Are Ignored!")
             newWindow.destroy()
         
         confirm_button = tk.Button(master=newWindow, text="Confirm", command=change_time_settings)
