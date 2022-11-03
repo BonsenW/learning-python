@@ -1,4 +1,4 @@
-from data.PomodoroAppSettings import PomodoroAppSettings
+from data.pomodoro_app_settings import PomodoroAppSettings
 from tkinter import messagebox
 import tkinter as tk
 import datetime

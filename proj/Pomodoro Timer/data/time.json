@@ -1,5 +1,5 @@
 {
-    "work_min": 60.0,
-    "short_break_min": 15.0,
-    "long_break_min": 30.0
+    "work_min": 0.15,
+    "short_break_min": 5.0,
+    "long_break_min": 10.0
 }
