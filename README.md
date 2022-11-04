@@ -5,7 +5,7 @@ A collection of beginner/intermediate python projects
 | Index | Project | Code | Demo |
 |:-:|:-:|:-:|:-:|
 | 0 | Rock Paper Scissor | link | link |
-| 1 | Hang Man | link | link |
+| 1 | [Hang Man](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Hang%20Man) |
 | 2 | Tic Tac Toe | link | link |
 | 3 | Black Jack | link | link |
 | 4 | Higher Lower | link | link |
