@@ -1,4 +1,5 @@
 from random import choice
+from tabulate import tabulate
 
 STAGES = ['''
   +---+
@@ -57,14 +58,15 @@ STAGES = ['''
 =========
 ''']
 
+def print_heading(string: str):
+    """ Prints a fancy heading """
+    print(tabulate([string], tablefmt='fancy_grid'))
+    
 def word_generator(file_name: str) -> str:
-    """ Generates a random word from a word list """
+    """ Generates a random word from a word list file """
     assert type(file_name) == str, "The file is invalid! Error: Not a string"
-    WORD_LIST = []
     with open(file_name, 'r') as words:
-        for word in words:
-            WORD_LIST.append(word.strip())
-    return choice(WORD_LIST)
+        return choice(words.readlines()).strip()
 
 def track_secret_word(secret: str, chars: list = []) -> str:
     """ Compares a list of characters against a secret word returning the state of the words
@@ -80,12 +82,13 @@ def track_secret_word(secret: str, chars: list = []) -> str:
                 state[i] = char
     return ''.join(state)
 
-def play_game():
+def main():
     secret_word = word_generator(r"hangman_words.txt")
     lives = 6
     guess_list = []
     current_state = track_secret_word(secret_word, guess_list)
-    print(f"HANGMAN!\n\n{current_state} || {guess_list}")
+    print_heading("HANGMAN")
+    print_heading(current_state)
 
     while current_state != secret_word and lives > 0:
         guess_list.append(input(f"Guess a letter: "))
@@ -95,11 +98,13 @@ def play_game():
         if old_state == current_state:
             lives -= 1
             print(f"\nLost 1 life! {STAGES[-lives]}")
-        print(f"{current_state} || {guess_list}")
+        print_heading(current_state)
+        print(','.join(guess_list), end='\n\n')
     
     if lives > 0:
         print(f"You win, secret word is: {secret_word}")
     else:
         print(f"You lose, secret word is: {secret_word}")
 
-play_game()
+if __name__ == "__main__":
+    main()
