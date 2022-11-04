@@ -3,51 +3,65 @@ from tkinter import messagebox
 import random
 import json
 
-class App(tk.Tk):
+class PasswordManager(tk.Tk):
     def __init__(self):
         super().__init__()
-        
+        self.setup_window()
+        self.setup_canvas()
+        self.setup_widgets()
+
+    def setup_window(self):
+        """ Initialises The Tkinter Window """
         self.title("Password Manager")
         self.config(padx=100, pady=75, bg="white")
-        
-        # Canvas
+    
+    def setup_canvas(self):
+        """ Sets up the main canvas """
         self.canvas = tk.Canvas(width=200, height=189, highlightthickness=0, bg="white")
         self.logo = tk.PhotoImage(master=self.canvas, file="logo.png")
         self.canvas.create_image(100, 100, image=self.logo)
+        self.canvas.grid(row=0,column=1, sticky=tk.NW)
+
+    def setup_widgets(self):
+        """ Calls all widget setups """
+        self.setup_website_widget()
+        self.setup_email_widget()
+        self.setup_password_widget()
+        self.setup_account_widgets()   
         
-        # Website
+    def setup_website_widget(self):
+        """ Sets up the website widget """
         self.website_label = tk.Label(text="Website: ", bg="white")
         self.website_entry = tk.Entry(width=50, bg="white")
         self.website_entry.focus()
+        self.website_label.grid(row=1, column=0, sticky=tk.W, pady=2)
+        self.website_entry.grid(row=1, column=1, sticky=tk.W, pady=2)
 
-        # Email
+    def setup_email_widget(self):
+        """ Sets up the email widget """
         self.user_label = tk.Label(text="Email/Username: ", bg="white")
         self.user_entry = tk.Entry(width=50, bg="white")
+        self.user_label.grid(row=2, column=0, sticky=tk.W, pady=2)
+        self.user_entry.grid(row=2, column=1, sticky=tk.W, pady=2)
 
-        # Password
+    def setup_password_widget(self):
+        """ Sets up the password widget"""
         self.password_label = tk.Label(text="Password: ", bg="white")
         self.password_entry = tk.Entry(width=30, bg="white") #, show("*")
         self.password_generate_button = tk.Button(text="Generate Password", bg="white", command=self.generate_randpass)
-
-        # Account Adding and Searching
-        self.add_account_button = tk.Button(text="Add Account", width=42, command=self.add_data)
-        self.search_button = tk.Button(text="Search", bg="white", command=self.search_acc)
-      
-        self.layout_widgets()
-        
-    def layout_widgets(self):
-        self.canvas.grid(row=0,column=1, sticky=tk.NW)
-        self.website_label.grid(row=1, column=0, sticky=tk.W, pady=2)
-        self.website_entry.grid(row=1, column=1, sticky=tk.W, pady=2)
-        self.user_label.grid(row=2, column=0, sticky=tk.W, pady=2)
-        self.user_entry.grid(row=2, column=1, sticky=tk.W, pady=2)
         self.password_label.grid(row=3, column=0, sticky=tk.W, pady=2)
         self.password_entry.grid(row=3, column=1, sticky=tk.W, pady=2)
         self.password_generate_button.grid(row=3, column=1, sticky=tk.E, pady=2)
+
+    def setup_account_widgets(self):
+        """ Sets up account widgets """
+        self.add_account_button = tk.Button(text="Add Account", width=42, command=self.add_data)
+        self.search_button = tk.Button(text="Search", bg="white", command=self.search_acc)
         self.add_account_button.grid(row=4, column=1, sticky=tk.W)
         self.search_button.grid(row=1, column=2, sticky=tk.W, padx=5)
 
     def add_data(self):
+        """ Adds any data from the widgets to the data file. """
         website = self.website_entry.get()
         user = self.user_entry.get()
         password = self.password_entry.get()
@@ -85,6 +99,7 @@ class App(tk.Tk):
                 self.user_entry.delete(0, tk.END)
 
     def search_acc(self):
+        """ Search through the data file to find an account """
         website = self.website_entry.get()
 
         try:
@@ -99,6 +114,7 @@ class App(tk.Tk):
             return messagebox.showinfo(title="Account", message=return_message)
 
     def generate_randpass(self):
+        """ Generates a random password """
         letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         lower_letters = "abcdefghijklmnopqrstuvwxyz"
         symbols = "!@#$%^&*()"
@@ -115,7 +131,16 @@ class App(tk.Tk):
         self.clipboard_append(new_pass)
     
     def ceasar_cipher_encode(self, message: str, key: int, dir: int=1):
-        """ Encodes a given message using ceasars cipher method """
+        """ Encodes a given message using ceasars cipher method 
+
+        Args:
+            message (str): message to encode.
+            key (int): encoding key.
+            dir (int, optional): 1 = encode, -1 = decode, defaults to 1.
+
+        Returns:
+            _type_: _description_
+        """
         ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
         encoded_message = ""
         for letter in message:
@@ -127,5 +152,5 @@ class App(tk.Tk):
         return encoded_message
 
 if __name__ == "__main__":
-    app = App()
+    app = PasswordManager()
     app.mainloop()
