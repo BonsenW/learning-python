@@ -2,6 +2,6 @@
 
 ---
 
-Code
+[Code](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Snake%20Game/main.py)
 
-Demo
+![Demo](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Snake%20Game/demo.gif)
