@@ -4,4 +4,4 @@
 
 [Code](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Flashcard%20Project/main.py)
 
-![Demo]([https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Flashcard%20Project/main.py](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Flashcard%20Project/images/demo.gif))
+![Demo](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Flashcard%20Project/images/demo.gif)
