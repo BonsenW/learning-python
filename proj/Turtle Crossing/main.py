@@ -9,7 +9,7 @@ MAX_CARS = 30
 TIME_BTW_SPAWNS = 5
 DISTANCE_BUFFER = 22
 
-# ---------------------------- screen setup ---------------------------- #
+# ---------------------------- screen setup ---------------------------- # 
 game_screen = Screen()
 game_screen.setup(width=600,height=600)
 game_screen.colormode(255)
