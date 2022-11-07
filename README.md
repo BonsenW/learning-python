@@ -11,7 +11,7 @@ A collection of beginner/intermediate python projects
 | 4 | Higher Lower | link | link |
 | 5 | Guess The Number | link | link |
 | 6 | Snake Game | link | link |
-| 7 | (Pong)[https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Pong] |
+| 7 | [Pong](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Pong) |
 | 8 | Turtle Crossing | link | link |
 | 9 | America State Quiz | link | link |
 | 10 | [Password Manager](https://github.com/BonsenW/python-beginner-collection/tree/1430fa7918374f60f2ee5292529565aa7f3fc96c/proj/Password%20Manager) |
