@@ -1,5 +1,5 @@
 import random
-from replit import clear
+import os
 
 def setup_cards() -> list:
     """ Returns a shuffled deck of cards """
@@ -25,6 +25,7 @@ def csum(deck: list) -> int:
     return res
 
 def win_check(player_sum, comp_sum):
+    """ Checks for the certain win conditions of Blackjack """
     if player_sum == comp_sum:
         return "Drew"
     if player_sum > 21 and comp_sum > 21:
@@ -38,8 +39,9 @@ def win_check(player_sum, comp_sum):
     elif comp_sum > player_sum:
         return "Lose"
 
-def play_game():
-    clear()
+def main():
+    """ Main Game Loop """
+    os.system('cls')
     print("-- BLACK JACK --")
     game_cards = setup_cards()
     
@@ -52,7 +54,7 @@ def play_game():
         print(f"Computers first card: {computer_cards[0]}")
 
         hit_stand = input("Do you want to hit or stand (h/s): ")
-        clear()
+        os.system('cls')
 
         if csum(computer_cards) < 17:
             computer_cards.append(game_cards.pop())
@@ -76,7 +78,8 @@ def play_game():
     print(f"You {is_win}!")
     
 if __name__ == "__main__":
+    os.system('cls')
     play = input("Do you want to play Blackjack (y/n): ")
     while play == 'y':
-        play_game()
+        main()
         play = input("Do you want to continue playing (y/n): ")
