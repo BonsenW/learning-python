@@ -12,7 +12,7 @@ A collection of beginner/intermediate python projects
 | 5 | Guess The Number | link | link |
 | 6 | Snake Game | link | link |
 | 7 | [Pong](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Pong) |
-| 8 | Turtle Crossing | link | link |
+| 8 | [Turtle Crossing](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Turtle%20Crossing) | link | link |
 | 9 | America State Quiz | link | link |
 | 10 | [Password Manager](https://github.com/BonsenW/python-beginner-collection/tree/1430fa7918374f60f2ee5292529565aa7f3fc96c/proj/Password%20Manager) |
 | 11 | [Pomodoro Timer](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Pomodoro%20Timer/README.md) |
