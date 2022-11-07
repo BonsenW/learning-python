@@ -2,6 +2,6 @@
 
 ---
 
-Code
+[Code](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/America%20State%20Quiz/main.py)
 
-Demo
+![Demo](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/America%20State%20Quiz/demo.gif)
