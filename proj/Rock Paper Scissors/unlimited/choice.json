@@ -1,0 +1,38 @@
+{
+    "rock": {
+        "beats": [
+            "scissor",
+            "gun"
+        ],
+        "beaten_by": [
+            "paper"
+        ]
+    },
+    "paper": {
+        "beats": [
+            "rock"
+        ],
+        "beaten_by": [
+            "scissor",
+            "gun"
+        ]
+    },
+    "scissor": {
+        "beats": [
+            "paper"
+        ],
+        "beaten_by": [
+            "rock",
+            "gun"
+        ]
+    },
+    "gun": {
+        "beats": [
+            "paper",
+            "scissor"
+        ],
+        "beaten_by": [
+            "rock"
+        ]
+    }
+}
