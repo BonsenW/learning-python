@@ -2,13 +2,17 @@
 
 A collection of beginner/intermediate python projects
 
-| Index | Project | Code | Demo |
+| Favourites |
+| [Tic Tac Toe](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Tic%20Tac%20Toe) |
+| [Pomodoro Timer](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Pomodoro%20Timer) |
+
+| Index | Project |
 |:-:|:-:|:-:|:-:|
 | 0 | [Rock Paper Scissor Unlimited](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Rock%20Paper%20Scissors) |
 | 1 | [Hang Man](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Hang%20Man) |
 | 2 | [Tic Tac Toe](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Tic%20Tac%20Toe) |
 | 3 | [Black Jack](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Black%20Jack) |
-| 4 | Higher Lower | link | link |
+| 4 | [Higher Lower](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Higher%20Lower) |
 | 5 | [Guess The Number](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Guess%20The%20Number) |
 | 6 | [Snake Game](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Snake%20Game) |
 | 7 | [Pong](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Pong) |
