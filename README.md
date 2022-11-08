@@ -6,7 +6,7 @@ A collection of beginner/intermediate python projects
 |:-:|:-:|:-:|:-:|
 | 0 | [Rock Paper Scissor Unlimited](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Rock%20Paper%20Scissors) |
 | 1 | [Hang Man](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Hang%20Man) |
-| 2 | Tic Tac Toe | link | link |
+| 2 | [Tic Tac Toe](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Tic%20Tac%20Toe) |
 | 3 | [Black Jack](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Black%20Jack/README.md) |
 | 4 | Higher Lower | link | link |
 | 5 | Guess The Number | link | link |
