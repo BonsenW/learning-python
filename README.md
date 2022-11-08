@@ -2,12 +2,14 @@
 
 A collection of beginner/intermediate python projects
 
-| Favourites |
-| [Tic Tac Toe](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Tic%20Tac%20Toe) |
-| [Pomodoro Timer](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Pomodoro%20Timer) |
+### **Favourites**
+-  [Tic Tac Toe](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Tic%20Tac%20Toe)
+-  [Pomodoro Timer](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Pomodoro%20Timer)
+
+### Total
 
 | Index | Project |
-|:-:|:-:|:-:|:-:|
+|:-:|:-:|
 | 0 | [Rock Paper Scissor Unlimited](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Rock%20Paper%20Scissors) |
 | 1 | [Hang Man](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Hang%20Man) |
 | 2 | [Tic Tac Toe](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Tic%20Tac%20Toe) |
