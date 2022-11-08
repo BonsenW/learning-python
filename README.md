@@ -9,7 +9,7 @@ A collection of beginner/intermediate python projects
 | 2 | [Tic Tac Toe](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Tic%20Tac%20Toe) |
 | 3 | [Black Jack](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Black%20Jack/README.md) |
 | 4 | Higher Lower | link | link |
-| 5 | Guess The Number | link | link |
+| 5 | [Guess The Number](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Guess%20The%20Number/README.md) |
 | 6 | [Snake Game](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Snake%20Game) |
 | 7 | [Pong](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Pong) |
 | 8 | [Turtle Crossing](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Turtle%20Crossing) |
