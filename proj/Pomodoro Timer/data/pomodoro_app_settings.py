@@ -3,7 +3,7 @@ import os
 
 class PomodoroAppSettings():
     
-    MAIN_PATH = "C:\\Users\\bonse\\OneDrive\\Desktop\\Bzone\\#1 Work\\#1 Coding\\Python\\Finished Projects\\Python Beginner Collection\\proj\\Pomodoro Timer"
+    MAIN_PATH = f"{os.getcwd()}"
     
     # General
     TIME_DATA_PATH = f"{MAIN_PATH}\\data\\time.json"
