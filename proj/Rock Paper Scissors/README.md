@@ -1,10 +1,10 @@
 ## Rock Paper Scissor
 
-Code (Unlimited)
+[Code (Unlimited)](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Rock%20Paper%20Scissors/unlimited/main.py)
 
-Demo 
+![Demo](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Rock%20Paper%20Scissors/u_demo.gif)
 
-Code (Basic)
+[Code (Basic)](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Rock%20Paper%20Scissors/basic/rock_paper_scissor.py)
 
-Demo
+![Demo](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Rock%20Paper%20Scissors/b_demo.gif)
 
