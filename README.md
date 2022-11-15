@@ -23,3 +23,4 @@ A collection of beginner/intermediate python projects
 | 10 | [Password Manager](https://github.com/BonsenW/python-beginner-collection/tree/1430fa7918374f60f2ee5292529565aa7f3fc96c/proj/Password%20Manager) |
 | 11 | [Pomodoro Timer](https://github.com/BonsenW/python-beginner-collection/blob/master/proj/Pomodoro%20Timer) |
 | 12 | [Flashcard Project](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Flashcard%20Project) |
+| 13 | [Breaking Bad Quote App](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Breaking%20Bad%20Quote%20App) |
