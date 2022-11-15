@@ -29,7 +29,7 @@ SCREEN_LOCATIONS = {
 URL = "https://api.breakingbadquotes.xyz/v1/quotes"
 QUOTE_FONT = ("Calibri", 12, "italic")
 
-class KanyeQuotes(tk.Tk):
+class BreakingBadQuotes(tk.Tk):
     
     author_options = {
         "Jesse Pinkman" : JESSE_IMG_PATH,
@@ -107,5 +107,5 @@ class KanyeQuotes(tk.Tk):
         self.author = data['author']
         
 if __name__ == "__main__":
-    app = KanyeQuotes()
+    app = BreakingBadQuotes()
     app.mainloop()
