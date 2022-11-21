@@ -1,6 +1,6 @@
-# python-beginner-collection
+# Learning Python
 
-A collection of beginner/intermediate python projects
+Upon starting my personal python journey, i wanted to log my progress throughout the years (as well as learn how to use github). This basic repository will thus be used to catalogue and keep track of my python project journey.
 
 ### **Favourites**
 -  [Tic Tac Toe](https://github.com/BonsenW/python-beginner-collection/tree/master/proj/Tic%20Tac%20Toe)
